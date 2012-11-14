@@ -1,6 +1,6 @@
 # HandySort
 
-TODO: Write a gem description
+Ultra simple manual sort key handling for ActiveRecord models.
 
 ## Installation
 
