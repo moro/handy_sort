@@ -10,12 +10,8 @@ module HandySort
   module ClassMethods
     def handy_sort(key, options = {})
       ranker = Ranker.new(key)
-      callback = CallbackManager.new(ranker, options)
 
-      before_create  callback
-      before_update  callback
-
-      before_destroy callback
+      CallbackManager.new(ranker, options).install(self)
 
       scope :handy_sorted, -> { order("#{key} ASC") }
     end

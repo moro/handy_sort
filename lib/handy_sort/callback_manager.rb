@@ -9,6 +9,12 @@ module HandySort
       @options = options
     end
 
+    def install(klass)
+      [:before_create, :before_update, :before_destroy].each do |hook|
+        klass.send hook, self
+      end
+    end
+
     def before_create(record)
       max = relation(record).count.succ
 
