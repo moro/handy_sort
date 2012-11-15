@@ -17,7 +17,7 @@ module HandySort
 
       before_destroy callback
 
-      scope :handy_sort, -> { order("#{key} ASC") }
+      scope :handy_sorted, -> { order("#{key} ASC") }
     end
   end
 end
